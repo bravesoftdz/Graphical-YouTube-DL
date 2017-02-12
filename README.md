@@ -5,12 +5,12 @@ Graphical YouTube-DL takes the command line youtube-dl for windows to a graphica
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 
-<h2>Whats new?</h2>
-* Nothing
-
 <h2>Tested Compatible sites</h2>
 * YouTube.com
 * SoundCloud.com
+
+<h2>Whats new?</h2>
+* Nothing
 
 <h2>Whats Broken?</h2>
 * Nothing
