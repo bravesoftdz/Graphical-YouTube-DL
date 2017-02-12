@@ -1,7 +1,7 @@
 <h1>Graphical YouTube-DL</h1>
 Graphical YouTube-DL takes the command line youtube-dl for windows to a graphical interface
 
-<a href="https://github.com/Inforcer25/Graphical-CMD/raw/master/Graphical%20CMD.exe">
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL.zip">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 
