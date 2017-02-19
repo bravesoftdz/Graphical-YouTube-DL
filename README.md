@@ -17,10 +17,6 @@ ffmpeg & ffprobe: https://ffmpeg.org/
 * New Theme
 * A lot more
 
-<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL.zip">
-  <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
-</a>
-
 <h2>Tested Compatible sites</h2>
 * YouTube.com
 * SoundCloud.com
