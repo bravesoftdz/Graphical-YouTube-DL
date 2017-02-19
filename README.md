@@ -2,10 +2,9 @@
 Graphical YouTube-DL takes the command line youtube-dl for windows to a graphical interface
 
 <h2>IMPORTANT!</h2>
-I DID NOT MAKE YOUTUBE-DL OR FFMPEG OR FFPROBE.
-I SIMPLY TOO IT AND TURNED IT INTO A NICE GUI.
-YouTube-DL: https://rg3.github.io/youtube-dl/
-ffmpeg & ffprobe: https://ffmpeg.org/
+I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
+- YouTube-DL: https://rg3.github.io/youtube-dl/
+- ffmpeg & ffprobe: https://ffmpeg.org/
 
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL.zip">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
