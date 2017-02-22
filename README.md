@@ -6,22 +6,30 @@ I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
 - YouTube-DL: https://rg3.github.io/youtube-dl/
 - ffmpeg & ffprobe: https://ffmpeg.org/
 
-<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL.zip">
+<h2>YouTube-DL + YouTube-DL installer</h2>
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL%20%2B%20YouTube-DL%20Installer.zip">
+  <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
+</a>
+
+<h2>YouTube-DL</h2>
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL.exe">
+  <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
+</a>
+
+<h2>YouTube-DL installer</h2>
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/youtube-dl%20installer.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 
 <h2>Whats new?</h2>
-* Complete rewrite
-* Set custom download dir
-* New Theme
-* A lot more
+* Added a option to stop the download
+* Fixed a bug where you needed to restart the program before setting a new download path
+* Fixed a resizing bug
+* Added a new browser for selecting a folder
 
 <h2>Tested Compatible sites</h2>
 * YouTube.com
 * SoundCloud.com
-
-<h2>Whats new?</h2>
-* Nothing
 
 <h2>Whats Broken?</h2>
 * Nothing that I know of ...
