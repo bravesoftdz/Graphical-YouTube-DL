@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 19
@@ -111,6 +112,7 @@ object Form1: TForm1
       Top = 64
       Width = 25
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = 'X'
       TabOrder = 5
       OnClick = btn4Click
@@ -120,6 +122,7 @@ object Form1: TForm1
       Top = 14
       Width = 25
       Height = 25
+      Anchors = [akTop, akRight]
       Caption = 'X'
       TabOrder = 6
       OnClick = btn5Click
@@ -147,8 +150,8 @@ object Form1: TForm1
     object lbl4: TLabel
       Left = 16
       Top = 223
-      Width = 217
-      Height = 66
+      Width = 215
+      Height = 57
       Caption = 
         'To Download a playlist simple add the playlist URL instead of th' +
         'e video URL'
@@ -199,9 +202,9 @@ object Form1: TForm1
     end
     object btninstall: TButton
       Left = 44
-      Top = 312
+      Top = 360
       Width = 161
-      Height = 66
+      Height = 42
       Caption = 'Install Missing Files'
       Enabled = False
       TabOrder = 1
@@ -209,12 +212,21 @@ object Form1: TForm1
     end
     object btn2: TButton
       Left = 44
-      Top = 384
+      Top = 408
       Width = 161
-      Height = 65
+      Height = 41
       Caption = 'Github Page'
       TabOrder = 2
       OnClick = btn2Click
+    end
+    object btn3: TButton
+      Left = 44
+      Top = 312
+      Width = 161
+      Height = 42
+      Caption = 'Stop Downloading'
+      TabOrder = 3
+      OnClick = btn3Click
     end
   end
   object mmo1: TMemo
@@ -238,6 +250,7 @@ object Form1: TForm1
     FavoriteLinks = <>
     FileTypes = <>
     Options = []
+    Title = 'Select a location to save'
     Left = 432
     Top = 241
   end

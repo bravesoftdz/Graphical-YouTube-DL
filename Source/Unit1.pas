@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, DosCommand, uCommands, uCommandCreator, ShellAPI;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, DosCommand, uCommands, uCommandCreator, ShellAPI,
+  Vcl.ExtDlgs, FileCtrl;
 
 type
   TForm1 = class(TForm)
@@ -32,6 +33,7 @@ type
     btn5: TButton;
     btn2: TButton;
     lbl4: TLabel;
+    btn3: TButton;
     procedure rbeasyClick(Sender: TObject);
     procedure rbcustomClick(Sender: TObject);
     procedure btncommandsClick(Sender: TObject);
@@ -42,6 +44,8 @@ type
     procedure btn2Click(Sender: TObject);
     procedure btn5Click(Sender: TObject);
     procedure btn4Click(Sender: TObject);
+    procedure btn3Click(Sender: TObject);
+    procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
   private
     { Private declarations }
   public
@@ -56,31 +60,17 @@ implementation
 
 {$R *.dfm}
 
-
-function GetCurrentUserName: string;
-const
-  cnMaxUserNameLen = 254;
-var
-  sUserName: string;
-  dwUserNameLen: DWORD;
-begin
-  dwUserNameLen := cnMaxUserNameLen - 1;
-  SetLength(sUserName, cnMaxUserNameLen);
-  GetUserName(PChar(sUserName), dwUserNameLen);
-  SetLength(sUserName, dwUserNameLen);
-  Result := sUserName;
-end;
-
 procedure TForm1.btn1Click(Sender: TObject);
 begin
-  with flpndlg1.Create(nil) do
-  try
-    Options := [fdoPickFolders];
-    if Execute then
+  dscmnd1.Stop;
+  SelectDirectory('Select a folder to save the video / audio you want to download','',sDownloadPath);
+  ShowMessage('Download path has been set to ' + sDownloadPath);
+
+  {flpndlg1.Options := [fdoPickFolders];
+  if flpndlg1.Execute then
+    begin
       sDownloadPath := flpndlg1.FileName;
-  finally
-    Free;
-  end;
+    end;}
 end;
 
 procedure TForm1.btndownloadClick(Sender: TObject);
@@ -91,6 +81,7 @@ begin
   if rbcustom.Checked then
     begin
       Form2.mmo1.Clear;
+      mmo1.Lines.Add('Starting Download...');
       Form2.mmo1.Lines.Add('@echo off');
       Form2.mmo1.Lines.Add('"C:\Program Files (x86)\YouTube-DL\youtube-dl.exe"' + edtcustom.Text);
       Form2.mmo1.Lines.Add('echo Done Performing custom commands');
@@ -103,6 +94,7 @@ begin
       if rbvideo.Checked then
     begin
       Form2.mmo1.Clear;
+      mmo1.Lines.Add('Starting Download...');
       Form2.mmo1.Lines.Add('@echo off');
       Form2.mmo1.Lines.Add('cd ' + sDownloadPath);
       Form2.mmo1.Lines.Add('"C:\Program Files (x86)\YouTube-DL\youtube-dl.exe" --format mp4 ' + edturl.Text);
@@ -116,6 +108,7 @@ begin
   if rbaudio.Checked then
     begin
       Form2.mmo1.Clear;
+      mmo1.Lines.Add('Starting Download...');
       Form2.mmo1.Lines.Add('@echo off');
       Form2.mmo1.Lines.Add('cd ' + sDownloadPath);
       Form2.mmo1.Lines.Add('"C:\Program Files (x86)\YouTube-DL\youtube-dl.exe" --extract-audio --audio-format mp3 ' + edturl.Text);
@@ -138,6 +131,11 @@ begin
   ShellExecute(self.WindowHandle,'open',PChar('https://github.com/Inforcer25'),nil,nil, SW_SHOWNORMAL);
 end;
 
+procedure TForm1.btn3Click(Sender: TObject);
+begin
+  dscmnd1.Stop
+end;
+
 procedure TForm1.btn4Click(Sender: TObject);
 begin
 edturl.Clear;
@@ -151,6 +149,14 @@ end;
 procedure TForm1.btncommandsClick(Sender: TObject);
 begin
   Form2.Show;
+end;
+
+procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
+begin
+  if MessageDlg('Are you sure you want to exit?', mtconfirmation, [mbYes, mbNo], 0) = mrYes then
+    CanClose:= True
+  else
+    CanClose:= False;
 end;
 
 procedure TForm1.FormShow(Sender: TObject);
@@ -168,9 +174,7 @@ begin
       mmo1.Lines.Add('ffmpeg.exe NOT FOUND! Please use the YouTube-DL-Installer to fix this issue');
       ShowMessage('ffmpeg.exe is missing. Please use the YouTube-DL-Installer to fix this issue');
       btndownload.Enabled := False;
-      ffmpeg := False;
-      if ffmpeg = False then
-        btninstall.Enabled := True;
+      btninstall.Enabled := True;
     end;
 
   if FileExists('C:\Program Files (x86)\YouTube-DL\ffprobe.exe') then
@@ -181,8 +185,7 @@ begin
       ShowMessage('ffprobe.exe is missing. Please use the YouTube-DL-Installer to fix this issue');
       btndownload.Enabled := False;
       ffprobe := False;
-      if ffprobe = False then
-        btninstall.Enabled := True;
+      btninstall.Enabled := True;
     end;
 
   if FileExists('C:\Program Files (x86)\YouTube-DL\youtube-dl.exe') then
@@ -192,9 +195,7 @@ begin
       mmo1.Lines.Add('youtube-dl.exe NOT FOUND! Please use the YouTube-DL-Installer to fix this issue');
       ShowMessage('ffprobe.exe is missing. Please use the YouTube-DL-Installer to fix this issue');
       btndownload.Enabled := False;
-      youtube := False;
-      if youtube = False then
-        btninstall.Enabled := True;
+      btninstall.Enabled := True;
     end;
 
   mmo1.Lines.Add(' ');
