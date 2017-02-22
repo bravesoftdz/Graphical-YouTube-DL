@@ -11,7 +11,7 @@ I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 
-<h2>YouTube-DL</h2>
+<h2>YouTube-DL (YouTube / soundcloud Downloader)</h2>
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
@@ -36,7 +36,7 @@ I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
 
 <h2>Preview</h2> 
 
-![GytDL](http://i.imgur.com/HxQKKAn.png "Preview")
+![GytDL](http://i.imgur.com/KT6WLBA.png "Preview")
 
 <h2>For Developers</h2>
 This was made & compiled with Rad Studio Berlin Update 2
