@@ -1,4 +1,4 @@
-<h1>Graphical YouTube-DL</h1>
+<h1>Graphical YouTube-DL v2.0.4</h1>
 Graphical YouTube-DL takes the command line youtube-dl for windows to a graphical interface
 
 <h2>IMPORTANT!</h2>
@@ -11,7 +11,7 @@ I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 
-<h2>YouTube-DL (YouTube / soundcloud Downloader)</h2>
+<h2>YouTube-DL v2.0.4 (YouTube / soundcloud Downloader)</h2>
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
