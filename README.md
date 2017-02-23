@@ -1,10 +1,10 @@
 <h1>Graphical YouTube-DL v2.0.4</h1>
 Graphical YouTube-DL takes the command line youtube-dl for windows to a graphical interface
 
-<h2>IMPORTANT!</h2>
-I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
-- YouTube-DL: https://rg3.github.io/youtube-dl/
-- ffmpeg & ffprobe: https://ffmpeg.org/
+<h2>How & what to update</h2>
+Only update what is needed to be updated. Look at the date & version of the files that was updated.
+youtube-dl installer 2017.02.11
+youtube-dl v2.0.4
 
 <h2>YouTube-DL + YouTube-DL installer</h2>
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL%20%2B%20YouTube-DL%20Installer.zip">
@@ -43,3 +43,8 @@ This was made & compiled with Rad Studio Berlin Update 2
 
 This project uses the following components:
 - https://github.com/TurboPack/DOSCommand
+
+<h2>Other programs used</h2>
+I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
+- YouTube-DL: https://rg3.github.io/youtube-dl/
+- ffmpeg & ffprobe: https://ffmpeg.org/
