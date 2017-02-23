@@ -3,8 +3,8 @@ Graphical YouTube-DL takes the command line youtube-dl for windows to a graphica
 
 <h2>How & what to update</h2>
 Only update what is needed to be updated. Look at the date & version of the files that was updated.
-youtube-dl installer 2017.02.11
-youtube-dl v2.0.4
+<h3>youtube-dl installer 2017.02.11</h3>
+<h3>youtube-dl v2.0.4</h3>
 
 <h2>YouTube-DL + YouTube-DL installer</h2>
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL%20%2B%20YouTube-DL%20Installer.zip">
