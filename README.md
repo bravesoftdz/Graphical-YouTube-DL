@@ -1,5 +1,5 @@
 <h1>Graphical YouTube-DL v2.0.4</h1>
-Graphical YouTube-DL takes the command line youtube-dl for windows to a graphical interface
+Graphical YouTube-DL is an easy-to-use Windows application that facilitates a clean and intuitive interface for downloading videos from YouTube. It represents a graphical interface for youtube-dl.
 
 <h2>How & what to update</h2>
 Only update what is needed to be updated. Look at the date & version of the files that was updated.
@@ -8,7 +8,7 @@ Only update what is needed to be updated. Look at the date & version of the file
 
 
 
-<h2>YouTube-DL + YouTube-DL installer</h2>
+<h2>YouTube-DL + YouTube-DL installer</h2> <--- (If you're from softpedia)
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL%20%2B%20YouTube-DL%20Installer.zip">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
