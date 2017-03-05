@@ -8,7 +8,7 @@ Only update what is needed to be updated. Look at the date & version of the file
 
 
 
-<h2>YouTube-DL + YouTube-DL installer</h2> <--- (If you're from softpedia)
+<h2>YouTube-DL + YouTube-DL installer <--- (If you're from softpedia)</h2>
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/YouTube-DL%20%2B%20YouTube-DL%20Installer.zip">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
