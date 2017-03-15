@@ -8,31 +8,33 @@ Graphical YouTube-DL takes the command line youtube-dl for windows to a graphica
 
 <h2>IMPORTANT!</h2>
 I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
-* <a href="https://rg3.github.io/youtube-dl/">youtube-dl</a>
-* <a href="https://ffmpeg.org/">ffmpeg & ffprobe</a>
+- <a href="https://rg3.github.io/youtube-dl/">youtube-dl</a>
+- <a href="https://ffmpeg.org/">ffmpeg & ffprobe</a>
 
 <h2>Graphical YouTube-DL Client v2.0.6</h2>
 This is only the client and not the commandline tool.
+
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/youtube-dl installer.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 
 <h2>youtube-dl.exe installer</h2>
 This is only the installer for the commandline tool and only needs to be downloaded once as it has a built in updater.
+
 <a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 
 <h2>Whats new?</h2>
-* A small bug fix
-* Fixed an issue where it doesn't want to download videos on some computers
-* Added "Check for updates" button
+- A small bug fix
+- Fixed an issue where it doesn't want to download videos on some computers
+- Added "Check for updates" button
 
 <h2>Whats new?</h2>
-* Nothing
+- Nothing
 
 <h2>Whats Broken?</h2>
-* Nothing that I know of ...
+- Nothing that I know of ...
 
 <h2>Preview</h2> 
 
