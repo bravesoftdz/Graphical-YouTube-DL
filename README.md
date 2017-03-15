@@ -15,14 +15,13 @@ I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
 <h2>Graphical YouTube-DL Client v2.0.6</h2>
 This is only the client and not the commandline tool.
 <br/>
-<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/youtube-dl installer.exe">
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 <br/>
 <h2>youtube-dl.exe installer</h2>
 This is only the installer for the commandline tool and only needs to be downloaded once as it has a built in updater.
-
-<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL.exe">
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/youtube-dl installer.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 
