@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnActivate = FormActivate
   OnCloseQuery = FormCloseQuery
   OnShow = FormShow
   PixelsPerInch = 96
@@ -140,12 +141,11 @@ object Form1: TForm1
       481)
     object lbl2: TLabel
       Left = 5
-      Top = 455
+      Top = 429
       Width = 177
       Height = 19
       Anchors = [akLeft, akBottom]
       Caption = 'Made by Adriaan Boshoff'
-      ExplicitTop = 592
     end
     object lbl4: TLabel
       Left = 16
@@ -156,6 +156,14 @@ object Form1: TForm1
         'To Download a playlist simple add the playlist URL instead of th' +
         'e video URL'
       WordWrap = True
+    end
+    object lbl5: TLabel
+      Left = 5
+      Top = 454
+      Width = 45
+      Height = 19
+      Anchors = [akLeft, akBottom]
+      Caption = 'v2.0.6'
     end
     object grp2: TGroupBox
       Left = 16
@@ -200,33 +208,33 @@ object Form1: TForm1
         OnClick = btn1Click
       end
     end
-    object btninstall: TButton
-      Left = 44
-      Top = 360
-      Width = 161
-      Height = 42
-      Caption = 'Install Missing Files'
-      Enabled = False
-      TabOrder = 1
-      OnClick = btninstallClick
-    end
     object btn2: TButton
       Left = 44
-      Top = 408
+      Top = 379
       Width = 161
       Height = 41
       Caption = 'Github Page'
-      TabOrder = 2
+      TabOrder = 1
       OnClick = btn2Click
     end
     object btn3: TButton
       Left = 44
-      Top = 312
+      Top = 286
       Width = 161
       Height = 42
       Caption = 'Stop Downloading'
-      TabOrder = 3
+      TabOrder = 2
       OnClick = btn3Click
+    end
+    object btn6: TButton
+      Left = 44
+      Top = 334
+      Width = 161
+      Height = 39
+      Caption = 'Check for Updates'
+      ElevationRequired = True
+      TabOrder = 3
+      OnClick = btn6Click
     end
   end
   object mmo1: TMemo
@@ -238,20 +246,13 @@ object Form1: TForm1
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 2
+    OnChange = mmo1Change
   end
   object dscmnd1: TDosCommand
     InputToOutput = False
     MaxTimeAfterBeginning = 0
     MaxTimeAfterLastOutput = 0
-    Left = 504
-    Top = 192
-  end
-  object flpndlg1: TFileOpenDialog
-    FavoriteLinks = <>
-    FileTypes = <>
-    Options = []
-    Title = 'Select a location to save'
-    Left = 432
-    Top = 241
+    Left = 448
+    Top = 224
   end
 end

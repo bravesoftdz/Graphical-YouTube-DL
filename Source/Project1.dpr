@@ -6,7 +6,9 @@ uses
   Vcl.Themes,
   Vcl.Styles,
   uCommands in 'uCommands.pas' {frmcommands},
-  uCommandCreator in 'uCommandCreator.pas' {Form2};
+  uCommandCreator in 'uCommandCreator.pas' {Form2},
+  uUpdater in 'uUpdater.pas' {frmupdater},
+  uDownloader in 'uDownloader.pas' {frmdownload};
 
 {$R *.res}
 
@@ -17,5 +19,7 @@ begin
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(Tfrmcommands, frmcommands);
   Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(Tfrmupdater, frmupdater);
+  Application.CreateForm(Tfrmdownload, frmdownload);
   Application.Run;
 end.
