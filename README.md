@@ -29,13 +29,14 @@ This is only the installer for the commandline tool and only needs to be downloa
 
 <h2>Whats new?</h2>
 - Many Fixes
+<br/>
 - Performance Improvents
+<br/>
 - New Design
+<br/>
 - Added Styles
+<br/>
 - Added a lot more
-
-<h2>Whats new?</h2>
-- Nothing
 
 <h2>Whats Broken?</h2>
 - Nothing that I know of ...
@@ -49,3 +50,4 @@ This was made & compiled with Rad Studio Berlin Update 2
 
 This project uses the following components:
 - https://github.com/TurboPack/DOSCommand
+
