@@ -16,7 +16,7 @@ I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
 <h2>Graphical YouTube-DL Client v2.1.1</h2>
 This is only the client and not the commandline tool.
 <br/>
-<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL.exe">
+<a href="http://www.mediafire.com/file/gc9d92np93wvk17/GraphicalYouTube-DL_v2.1.1.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 <br/>
