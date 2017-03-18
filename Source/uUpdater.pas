@@ -18,6 +18,7 @@ type
     procedure btn2Click(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     function IsAdmin(Host : string = '') : Boolean;
+    procedure OpenURL (url : string);
   private
     { Private declarations }
   public
@@ -49,7 +50,7 @@ begin
 
   if chkgraphical.Checked then
     begin
-      ShellExecute(Application.Handle, PChar('open'), PChar('https://github.com/Inforcer25/Graphical-YouTube-DL'), nil, nil, SW_SHOW);
+      OpenURL('https://inforcer25.github.io/Graphical-YouTube-DL/');
     end;
 
   if (chkyoutubedl.Checked = False) and (chkgraphical.Checked = False) then
@@ -74,6 +75,11 @@ begin
       if Result then
         CloseServiceHandle(H);
     end;
+end;
+
+procedure Tfrmupdater.OpenURL(url: string);
+begin
+  ShellExecute(Application.Handle, PChar('open'), PChar(url), nil, nil, SW_SHOW);
 end;
 
 end.
