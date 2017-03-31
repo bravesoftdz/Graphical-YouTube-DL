@@ -16,7 +16,7 @@ I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
 <h2>Graphical YouTube-DL Client v2.1.2</h2>
 This is only the client and not the commandline tool.
 <br/>
-<a href="http://www.mediafire.com/file/gc9d92np93wvk17/GraphicalYouTube-DL_v2.1.1.exe">
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL%20v2.1.2.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 <br/>
@@ -35,7 +35,7 @@ This is only the installer for the commandline tool and only needs to be downloa
 
 <h2>Preview</h2> 
 
-![GytDL](http://i.imgur.com/IQsVczl.png "Preview")
+![GytDL](http://i.imgur.com/PFUModZ.png "Preview")
 
 <h2>For Developers</h2>
 This was made & compiled with Rad Studio Berlin Update 2
