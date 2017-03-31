@@ -10,7 +10,8 @@ uses
   uUpdater in 'uUpdater.pas' {frmupdater},
   uDownloader in 'uDownloader.pas' {frmdownload},
   uThemeManager in 'uThemeManager.pas' {frmthememanager},
-  uMediaPlayer in 'uMediaPlayer.pas' {frmmediaplayer};
+  uMediaPlayer in 'uMediaPlayer.pas' {frmmediaplayer},
+  uIssueReporter in 'uIssueReporter.pas' {frmissuereport};
 
 {$R *.res}
 
@@ -25,5 +26,6 @@ begin
   Application.CreateForm(Tfrmdownload, frmdownload);
   Application.CreateForm(Tfrmthememanager, frmthememanager);
   Application.CreateForm(Tfrmmediaplayer, frmmediaplayer);
+  Application.CreateForm(Tfrmissuereport, frmissuereport);
   Application.Run;
 end.

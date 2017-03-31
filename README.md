@@ -28,14 +28,7 @@ This is only the installer for the commandline tool and only needs to be downloa
 </a>
 
 <h2>Whats new?</h2>
-- Many Fixes
-- Performance Improvents
-- New Design
-- Added Styles
-- Added a lot more
-
-<h2>Whats new?</h2>
-- Nothing
+- File size went from 17mb to 3mb.
 
 <h2>Whats Broken?</h2>
 - Nothing that I know of ...

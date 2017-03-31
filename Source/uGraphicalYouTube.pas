@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, DosCommand, uCommands, uCommandCreator, ShellAPI,
   Vcl.ExtDlgs, FileCtrl, WinSvc, uUpdater, wininet, uDownloader, Vcl.Menus, uThemeManager, vcl.themes,
   Vcl.OleCtrls, WMPLib_TLB, uMediaPlayer, Vcl.ToolWin, Vcl.ComCtrls,
-  Vcl.JumpList;
+  Vcl.JumpList, uIssueReporter;
 
 type
   Tfrmmain = class(TForm)
@@ -276,6 +276,7 @@ end;
 
 procedure Tfrmmain.btn6Click(Sender: TObject);
 begin
+//  frmissuereport.ShowModal;
   OpenURL('https://github.com/Inforcer25/Graphical-YouTube-DL/issues');
 end;
 
