@@ -6,6 +6,15 @@ Graphical YouTube-DL takes the command line youtube-dl for windows to a graphica
 - After you used the installer you need to run the client as admin then press the "Check For Updates" button and update youtube-dl.exe
 - Done and ready for use!
 
+Video:
+object width="425" height="350">
+  <param name="movie" value="https://www.youtube.com/watch?v=4aOCewSWdIM&feature=youtu.be" />
+  <param name="wmode" value="transparent" />
+  <embed src="https://www.youtube.com/watch?v=4aOCewSWdIM&feature=youtu.be"
+         type="application/x-shockwave-flash"
+         wmode="transparent" width="425" height="350" />
+</object>
+
 <h2>IMPORTANT!</h2>
 I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
 <br/>
