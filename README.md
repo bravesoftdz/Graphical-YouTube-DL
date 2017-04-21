@@ -1,7 +1,7 @@
 <h1>Graphical YouTube-DL v2.1.2</h1>
 Graphical YouTube-DL takes the command line youtube-dl for windows to a graphical interface
 
-<h2>How to install & use</h2>
+<h2>How to install & use (Click the image below to watch the video tutorial)</h2>
 - If this is your first time using this you need to download both the installer and the client.
 - After you used the installer you need to run the client as admin then press the "Check For Updates" button and update youtube-dl.exe
 - Done and ready for use!
