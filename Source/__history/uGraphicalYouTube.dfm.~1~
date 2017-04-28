@@ -146,7 +146,7 @@ object frmmain: Tfrmmain
       Width = 45
       Height = 19
       Anchors = [akLeft, akBottom]
-      Caption = 'v2.1.3'
+      Caption = 'v2.1.2'
     end
     object grp2: TGroupBox
       Left = 16

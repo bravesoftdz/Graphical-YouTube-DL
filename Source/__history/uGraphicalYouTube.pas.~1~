@@ -378,12 +378,12 @@ procedure Tfrmmain.mmo1Change(Sender: TObject);
 var
   lineNumber: integer;
 begin
- { for lineNumber := 0 to mmo1.lines.count-1 do
+  for lineNumber := 0 to mmo1.lines.count-1 do
     if Pos( 'Done Downloading Update', mmo1.lines[lineNumber] ) > 0 then
       begin
         if FileExists('C:\Program Files (x86)\YouTube-DL\youtube-dl-updater.bat') then
           ShellExecute(Handle, 'runas', 'C:\Program Files (x86)\YouTube-DL\youtube-dl-updater.bat', nil, nil, SW_SHOWNORMAL);
-      end; }
+      end;
 end;
 
 procedure Tfrmmain.OpenGithubPage1Click(Sender: TObject);
