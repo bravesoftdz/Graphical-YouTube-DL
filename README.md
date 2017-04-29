@@ -32,11 +32,9 @@ This is only the installer for the commandline tool and only needs to be downloa
 </a>
 
 <h2>Whats new?</h2>
-<<<<<<< HEAD
 - Added a notification updater for the graphical client
-=======
 - Fixed a small error when updating youtube-dl
->>>>>>> origin/master
+
 
 <h2>Whats Broken?</h2>
 - Nothing that I know of ...
