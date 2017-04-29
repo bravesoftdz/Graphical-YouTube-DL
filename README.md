@@ -32,7 +32,7 @@ This is only the installer for the commandline tool and only needs to be downloa
 </a>
 
 <h2>Whats new?</h2>
-- File size went from 17mb to 3mb.
+- Fixed a small error when updating youtube-dl
 
 <h2>Whats Broken?</h2>
 - Nothing that I know of ...
