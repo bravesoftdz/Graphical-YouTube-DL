@@ -33,6 +33,7 @@ This is only the installer for the commandline tool and only needs to be downloa
 
 <h2>Whats new?</h2>
 - Added a notification updater for the graphical client
+<br/>
 - Fixed a small error when updating youtube-dl
 
 
