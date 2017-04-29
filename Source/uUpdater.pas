@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uCommandCreator,
-  Vcl.ExtCtrls, WinSvc, uDownloader, ShellAPI;
+  Vcl.ExtCtrls, WinSvc, uDownloader, ShellAPI, IdBaseComponent, IdComponent,
+  IdTCPConnection, IdTCPClient, IdHTTP;
 
 type
   Tfrmupdater = class(TForm)
@@ -15,6 +16,7 @@ type
     pnl2: TPanel;
     chkyoutubedl: TCheckBox;
     chkgraphical: TCheckBox;
+    idhtp1: TIdHTTP;
     procedure btn2Click(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     function IsAdmin(Host : string = '') : Boolean;
@@ -34,11 +36,13 @@ implementation
 {$R *.dfm}
 
 procedure Tfrmupdater.btn1Click(Sender: TObject);
+var
+  updatelink: string;
 begin
-  update := True;
-
+  //updatelink := idhtp1.Get('http://41.185.91.51/gytdl/dl-link.html');
   if chkyoutubedl.Checked then
     begin
+      update := True;
       Form2.mmo1.Clear;
       Form2.mmo1.Lines.Add('@echo off');
       Form2.mmo1.Lines.Add('echo This may take a while...');
@@ -50,11 +54,14 @@ begin
 
   if chkgraphical.Checked then
     begin
-      OpenURL('https://inforcer25.github.io/Graphical-YouTube-DL/');
+      //frmdownload.Show;
+      frmdownload.wb1.Navigate(idhtp1.Get('http://41.185.91.51/gytdl/dl-link.html'));
+      //OpenURL('https://inforcer25.github.io/Graphical-YouTube-DL/');
     end;
 
   if (chkyoutubedl.Checked = False) and (chkgraphical.Checked = False) then
     ShowMessage('Please select at least one option');
+
 end;
 
 procedure Tfrmupdater.btn2Click(Sender: TObject);

@@ -134,7 +134,7 @@ object frmmain: Tfrmmain
       481)
     object lbl2: TLabel
       Left = 5
-      Top = 429
+      Top = 405
       Width = 177
       Height = 19
       Anchors = [akLeft, akBottom]
@@ -142,11 +142,21 @@ object frmmain: Tfrmmain
     end
     object lbl5: TLabel
       Left = 5
-      Top = 454
+      Top = 430
       Width = 45
       Height = 19
       Anchors = [akLeft, akBottom]
-      Caption = 'v2.1.3'
+      Caption = 'v2.1.4'
+    end
+    object lblstatus: TLabel
+      Left = 1
+      Top = 455
+      Width = 247
+      Height = 25
+      Align = alBottom
+      Alignment = taCenter
+      Caption = 'lblstatus'
+      StyleElements = [seClient, seBorder]
     end
     object grp2: TGroupBox
       Left = 16
@@ -203,7 +213,7 @@ object frmmain: Tfrmmain
     end
     object btn6: TButton
       Left = 44
-      Top = 374
+      Top = 326
       Width = 161
       Height = 49
       Anchors = [akLeft, akBottom]
@@ -370,5 +380,22 @@ object frmmain: Tfrmmain
       Caption = 'Paste'
       OnClick = Paste2Click
     end
+  end
+  object idhtp1: TIdHTTP
+    AllowCookies = True
+    ProxyParams.BasicAuthentication = False
+    ProxyParams.ProxyPort = 0
+    Request.ContentLength = -1
+    Request.ContentRangeEnd = -1
+    Request.ContentRangeStart = -1
+    Request.ContentRangeInstanceLength = -1
+    Request.Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    Request.BasicAuthentication = False
+    Request.UserAgent = 'Mozilla/3.0 (compatible; Indy Library)'
+    Request.Ranges.Units = 'bytes'
+    Request.Ranges = <>
+    HTTPOptions = [hoForceEncodeParams]
+    Left = 864
+    Top = 440
   end
 end

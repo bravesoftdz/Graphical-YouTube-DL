@@ -1,4 +1,4 @@
-<h1>Graphical YouTube-DL v2.1.3</h1>
+<h1>Graphical YouTube-DL v2.1.4</h1>
 Graphical YouTube-DL takes the command line youtube-dl for windows to a graphical interface
 
 <h2>How to install & use (Click the image below to watch the video tutorial)</h2>
@@ -17,10 +17,10 @@ I did not make the youtube-dl commandline tool nor ffmpeg or ffprobe
 <br/>
 - <a href="https://ffmpeg.org/">ffmpeg & ffprobe</a>
 
-<h2>Graphical YouTube-DL Client v2.1.3</h2>
+<h2>Graphical YouTube-DL Client v2.1.4</h2>
 This is only the client and not the commandline tool.
 <br/>
-<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL%20v2.1.3.exe">
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL%20v2.1.4.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 <br/>
@@ -32,7 +32,7 @@ This is only the installer for the commandline tool and only needs to be downloa
 </a>
 
 <h2>Whats new?</h2>
-- File size went from 17mb to 3mb.
+- Added a notification updater for the graphical client
 
 <h2>Whats Broken?</h2>
 - Nothing that I know of ...

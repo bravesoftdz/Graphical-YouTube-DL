@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, DosCommand, uCommands, uCommandCreator, ShellAPI,
   Vcl.ExtDlgs, FileCtrl, WinSvc, uUpdater, wininet, uDownloader, Vcl.Menus, uThemeManager, vcl.themes,
   Vcl.OleCtrls, WMPLib_TLB, uMediaPlayer, Vcl.ToolWin, Vcl.ComCtrls,
-  Vcl.JumpList, uIssueReporter;
+  Vcl.JumpList, uIssueReporter, IdBaseComponent, IdComponent, IdTCPConnection,
+  IdTCPClient, IdHTTP;
 
 type
   Tfrmmain = class(TForm)
@@ -70,6 +71,8 @@ type
     VidMe1: TMenuItem;
     btn6: TButton;
     ReportIssue1: TMenuItem;
+    idhtp1: TIdHTTP;
+    lblstatus: TLabel;
     procedure rbeasyClick(Sender: TObject);
     procedure rbcustomClick(Sender: TObject);
     procedure btndownloadClick(Sender: TObject);
@@ -108,8 +111,10 @@ type
     procedure OpenURL (url : string);
     procedure btn6Click(Sender: TObject);
     procedure ReportIssue1Click(Sender: TObject);
+    function IsConnected: Boolean;
   private
     { Private declarations }
+    needupdate: Boolean;
   public
     { Private declarations }
     sDownloadPath : string;
@@ -190,6 +195,7 @@ begin
 
           if frmupdater.update = True then
             begin
+              frmupdater.update := False;
               dscmnd1.Stop;
               mmo1.Clear;
               dscmnd1.CommandLine := 'C:\Users\Public\Documents\yt-update.bat';
@@ -285,6 +291,10 @@ var
   origin : Cardinal;
 begin
   connected := InternetGetConnectedState(@origin,0);
+  if needupdate = False then
+    frmupdater.chkgraphical.Enabled := False
+  else
+    frmupdater.chkgraphical.Enabled := True;
 end;
 
 procedure Tfrmmain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -296,7 +306,11 @@ begin
 end;
 
 procedure Tfrmmain.FormCreate(Sender: TObject);
+var
+  updatenum: string;
 begin
+  lblstatus.Alignment := taCenter;
+
   if FileExists('C:\Users\Public\Documents\graphicalyt-theme.txt') then
       begin
         AssignFile(txttheme, 'C:\Users\Public\Documents\graphicalyt-theme.txt');
@@ -306,6 +320,31 @@ begin
 
         TStyleManager.SetStyle(stylename);
       end;
+
+  if IsConnected = True then
+    begin
+      updatenum := idhtp1.Get('http://41.185.91.51/gytdl/version.html');
+
+      if updatenum > IntToStr(3) then
+        begin
+          lblstatus.Caption := 'Update Avalible';
+          ShowMessage('There''s an update Avalible for the graphical client');
+          lblstatus.Font.Color := clRed;
+          needupdate := True;
+        end
+      else
+        begin
+          lblstatus.Caption := 'Latest Version';
+          lblstatus.Font.Color := clLime;
+          needupdate := False;
+        end
+    end
+  else
+    begin
+      ShowMessage('Unable to connect to the internet');
+      lblstatus.Caption := 'No internet connection';
+      lblstatus.Font.Color := clRed;
+    end;
 end;
 
 procedure Tfrmmain.FormShow(Sender: TObject);
@@ -374,16 +413,80 @@ begin
     end;
 end;
 
+function Tfrmmain.IsConnected: Boolean;
+const
+  // Local system has a valid connection to the Internet, but it might or might
+  // not be currently connected.
+  INTERNET_CONNECTION_CONFIGURED = $40;
+
+  // Local system uses a local area network to connect to the Internet.
+  INTERNET_CONNECTION_LAN = $02;
+
+  // Local system uses a modem to connect to the Internet
+  INTERNET_CONNECTION_MODEM = $01;
+
+  // Local system is in offline mode.
+  INTERNET_CONNECTION_OFFLINE = $20;
+
+  // Local system uses a proxy server to connect to the Internet
+  INTERNET_CONNECTION_PROXY = $04;
+
+  // Local system has RAS installed.
+  INTERNET_RAS_INSTALLED = $10;
+
+var
+  InetState: DWORD;
+  hHttpSession, hReqUrl: HInternet;
+begin
+  Result:= InternetGetConnectedState(@InetState, 0);
+  if (
+    Result
+    and
+    (
+      InetState and INTERNET_CONNECTION_CONFIGURED
+        = INTERNET_CONNECTION_CONFIGURED)
+    ) then
+  begin
+    // so far we ONLY know there's a valid connection. See if we can grab some
+    // known URL ...
+    hHttpSession:= InternetOpen(
+      PChar(Application.Title), // this line is the agent string
+      INTERNET_OPEN_TYPE_PRECONFIG, nil, nil, 0
+    );
+    try
+      hReqUrl:= InternetOpenURL(
+        hHttpSession,
+        PChar('http://41.185.91.51/'{ the URL to check }),
+        nil,
+        0,
+        0,
+        0
+      );
+      Result := hReqUrl <> nil;
+      InternetCloseHandle(hReqUrl);
+    finally
+      InternetCloseHandle(hHttpSession);
+    end;
+  end
+  else
+    if (
+      InetState and INTERNET_CONNECTION_OFFLINE = INTERNET_CONNECTION_OFFLINE
+    ) then
+      Result := False; // we know for sure we are offline.
+end;
+
 procedure Tfrmmain.mmo1Change(Sender: TObject);
 var
   lineNumber: integer;
 begin
- { for lineNumber := 0 to mmo1.lines.count-1 do
+{
+  for lineNumber := 0 to mmo1.lines.count-1 do
     if Pos( 'Done Downloading Update', mmo1.lines[lineNumber] ) > 0 then
       begin
         if FileExists('C:\Program Files (x86)\YouTube-DL\youtube-dl-updater.bat') then
           ShellExecute(Handle, 'runas', 'C:\Program Files (x86)\YouTube-DL\youtube-dl-updater.bat', nil, nil, SW_SHOWNORMAL);
-      end; }
+      end;
+}
 end;
 
 procedure Tfrmmain.OpenGithubPage1Click(Sender: TObject);
