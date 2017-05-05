@@ -114,7 +114,7 @@ type
     function IsConnected: Boolean;
   private
     { Private declarations }
-    needupdate: Boolean;
+    needupdate, shouldclose: Boolean;
   public
     { Private declarations }
     sDownloadPath : string;
@@ -132,7 +132,10 @@ procedure Tfrmmain.btn1Click(Sender: TObject);
 begin
   dscmnd1.Stop;
   if SelectDirectory('Select a folder to save the video / audio you want to download','',sDownloadPath) then
-    ShowMessage('Download path has been set to ' + sDownloadPath);
+    begin
+      //ShowMessage('Download path has been set to ' + sDownloadPath);
+      mmo1.Lines.Add('Download path has been set to ' + sDownloadPath)
+    end;
 end;
 
 procedure Tfrmmain.btndownloadClick(Sender: TObject);
@@ -299,10 +302,17 @@ end;
 
 procedure Tfrmmain.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
-  if MessageDlg('Are you sure you want to exit?', mtconfirmation, [mbYes, mbNo], 0) = mrYes then
-    CanClose:= True
+  if shouldclose = False then
+    begin
+      if MessageDlg('Are you sure you want to exit?', mtconfirmation, [mbYes, mbNo], 0) = mrYes then
+        CanClose:= True
+      else
+        CanClose:= False;
+    end
   else
-    CanClose:= False;
+    begin
+      CanClose := True;
+    end;
 end;
 
 procedure Tfrmmain.FormCreate(Sender: TObject);
@@ -325,7 +335,7 @@ begin
     begin
       updatenum := idhtp1.Get('http://41.185.91.51/gytdl/version.html');
 
-      if updatenum > IntToStr(3) then
+      if updatenum > IntToStr(5) then
         begin
           lblstatus.Caption := 'Update Avalible';
           ShowMessage('There''s an update Avalible for the graphical client');
@@ -349,30 +359,51 @@ end;
 
 procedure Tfrmmain.FormShow(Sender: TObject);
 var
-  ffmpeg, ffprobe, youtube : Boolean;
+  //ffmpeg, ffprobe, youtube : Boolean;
+  error_msg: string;
 begin
   Application.Title := 'Graphical YouTube-DL';
   mmo1.Lines.Clear;
   dscmnd1.OutputLines := mmo1.Lines;
   sDownloadPath := 'Current Dir';
+  error_msg := 'Some files are missing! You need to install youtube-dl commandline and restart GYTDL. After clicking ok you will be given the option to download the installer.';
 
-  if FileExists('C:\Program Files (x86)\YouTube-DL\ffmpeg.exe') then
-    mmo1.Lines.Add('ffmpeg.exe FOUND!')
+  if FileExists('C:\Program Files (x86)\YouTube-DL\ffmpeg.exe') and FileExists('C:\Program Files (x86)\YouTube-DL\ffprobe.exe') and FileExists('C:\Program Files (x86)\YouTube-DL\youtube-dl.exe') then
+    mmo1.Lines.Add('All needed files are found!')
   else
     begin
-      mmo1.Lines.Add('ffmpeg.exe NOT FOUND! Please use the YouTube-DL-Installer to fix this issue. The Installer can be found on the github page. Just click "Options > Open Github Page"');
-      ShowMessage('ffmpeg.exe is missing. Please use the YouTube-DL-Installer to fix this issue. The Installer can be found on the github page. Just click "Options > Open Github Page"');
+      mmo1.Lines.Add('After you installed youtube-dl you need to restart GYTDL');
+      ShowMessage(error_msg);
       btndownload.Enabled := False;
+
+      if MessageDlg('Are you sure you want to download the youtube-dl installer?', mtconfirmation, [mbYes, mbNo], 0) = mrYes then
+        begin
+          frmdownload.wb1.Navigate('http://download1785.mediafire.com/p242iv9zsfcg/glt12tixyjz8bie/youtube-dl+installer.exe');
+          shouldclose := False
+        end
+      else
+        begin
+          ShowMessage('You will not be able to use GYTDL! The application will now close');
+          shouldclose := True;
+          Close;
+        end;
     end;
 
-  if FileExists('C:\Program Files (x86)\YouTube-DL\ffprobe.exe') then
+ { if FileExists('C:\Program Files (x86)\YouTube-DL\ffprobe.exe') then
     mmo1.Lines.Add('ffprobe.exe FOUND!')
   else
     begin
       mmo1.Lines.Add('ffprobe.exe NOT FOUND! Please use the YouTube-DL-Installer to fix this issue. The Installer can be found on the github page. Just click "Options > Open Github Page"');
-      ShowMessage('ffprobe.exe is missing. Please use the YouTube-DL-Installer to fix this issue. The Installer can be found on the github page. Just click "Options > Open Github Page"');
+      ShowMessage(error_msg);
       btndownload.Enabled := False;
-      ffprobe := False;
+
+      if MessageDlg('Are you sure you want to download the youtube-dl installer?', mtconfirmation, [mbYes, mbNo], 0) = mrYes then
+        frmdownload.wb1.Navigate('https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/youtube-dl%20installer.exe')
+      else
+        begin
+          ShowMessage('You will not be able to use GYTDL! The application will now close');
+          Close;
+        end;
     end;
 
   if FileExists('C:\Program Files (x86)\YouTube-DL\youtube-dl.exe') then
@@ -380,9 +411,17 @@ begin
   else
     begin
       mmo1.Lines.Add('youtube-dl.exe NOT FOUND! Please use the YouTube-DL-Installer to fix this issue. The Installer can be found on the github page. Just click "Options > Open Github Page"');
-      ShowMessage('ffprobe.exe is missing. Please use the YouTube-DL-Installer to fix this issue. The Installer can be found on the github page. Just click "Options > Open Github Page"');
+      ShowMessage(error_msg);
       btndownload.Enabled := False;
-    end;
+
+      if MessageDlg('Are you sure you want to download the youtube-dl installer?', mtconfirmation, [mbYes, mbNo], 0) = mrYes then
+        frmdownload.wb1.Navigate('https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/youtube-dl%20installer.exe')
+      else
+        begin
+          ShowMessage('You will not be able to use GYTDL! The application will now close');
+          Close;
+        end;
+    end;   }
 
   mmo1.Lines.Add(' ');
   mmo1.Lines.Add('If it keeps failing to download a video please click on the "Updates > Check for updates" button and update youtube-dl.exe');

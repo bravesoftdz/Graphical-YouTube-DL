@@ -2,7 +2,7 @@ object frmmain: Tfrmmain
   Left = 520
   Top = 249
   Caption = 'YouTube-DL'
-  ClientHeight = 594
+  ClientHeight = 574
   ClientWidth = 943
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -126,37 +126,40 @@ object frmmain: Tfrmmain
     Left = 0
     Top = 113
     Width = 249
-    Height = 481
+    Height = 461
     Align = alLeft
     TabOrder = 1
     DesignSize = (
       249
-      481)
+      461)
     object lbl2: TLabel
       Left = 5
-      Top = 405
+      Top = 385
       Width = 177
       Height = 19
       Anchors = [akLeft, akBottom]
       Caption = 'Made by Adriaan Boshoff'
+      ExplicitTop = 405
     end
     object lbl5: TLabel
       Left = 5
-      Top = 430
+      Top = 410
       Width = 45
       Height = 19
       Anchors = [akLeft, akBottom]
-      Caption = 'v2.1.4'
+      Caption = 'v2.1.5'
     end
     object lblstatus: TLabel
       Left = 1
-      Top = 455
+      Top = 441
       Width = 247
-      Height = 25
+      Height = 19
       Align = alBottom
       Alignment = taCenter
       Caption = 'lblstatus'
       StyleElements = [seClient, seBorder]
+      ExplicitTop = 455
+      ExplicitWidth = 58
     end
     object grp2: TGroupBox
       Left = 16
@@ -213,7 +216,7 @@ object frmmain: Tfrmmain
     end
     object btn6: TButton
       Left = 44
-      Top = 326
+      Top = 306
       Width = 161
       Height = 49
       Anchors = [akLeft, akBottom]
@@ -226,7 +229,7 @@ object frmmain: Tfrmmain
     Left = 249
     Top = 113
     Width = 694
-    Height = 481
+    Height = 461
     Align = alClient
     PopupMenu = pmlog
     ReadOnly = True
