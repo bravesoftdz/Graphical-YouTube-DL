@@ -4,7 +4,7 @@ Graphical YouTube-DL is an easy-to-use Windows application that facilitates a cl
 <h2>Download v2.1.5</h2>
 Click the big "Download" button below to start your download!
 <br/>
-<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL%20v2.1.5.exe">
+<a href="https://github.com/Inforcer25/Graphical-YouTube-DL/raw/master/GraphicalYouTube-DL%20v2.1.6.exe">
   <img src="http://i.imgur.com/qoGP19r.png" alt="Download">
 </a>
 

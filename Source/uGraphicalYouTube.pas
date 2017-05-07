@@ -335,7 +335,7 @@ begin
     begin
       updatenum := idhtp1.Get('http://41.185.91.51/gytdl/version.html');
 
-      if updatenum > IntToStr(5) then
+      if updatenum > IntToStr(6) then
         begin
           lblstatus.Caption := 'Update Avalible';
           ShowMessage('There''s an update Avalible for the graphical client');
@@ -378,7 +378,7 @@ begin
 
       if MessageDlg('Are you sure you want to download the youtube-dl installer?', mtconfirmation, [mbYes, mbNo], 0) = mrYes then
         begin
-          frmdownload.wb1.Navigate('http://download1785.mediafire.com/p242iv9zsfcg/glt12tixyjz8bie/youtube-dl+installer.exe');
+          frmdownload.wb1.Navigate('http://41.185.91.51/gytdl/youtube-dl-installer.exe');
           shouldclose := False
         end
       else
