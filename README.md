@@ -1,4 +1,4 @@
-<h1>Graphical YouTube Downloader</h1>
+<h1>Graphical YouTube Downloader (No longer working on this)</h1>
 Graphical YouTube-DL is an easy-to-use Windows application that facilitates a clean and intuitive interface for downloading videos from YouTube. It represents a graphical interface for youtube-dl.
 
 <h2>Download v2.1.6</h2>
